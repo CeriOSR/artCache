@@ -159,7 +159,7 @@ class ArtCommetCollectionViewController: UICollectionViewController, UICollectio
         comments = []
         let panRef = FIRDatabase.database().reference().child("comments_fanning").child(artId)
         panRef.observe(.childAdded, with: { (snapshot) in
-            guard let commentId = snapshot.key as? String else {return}
+            let commentId = snapshot.key
             let commentRef = FIRDatabase.database().reference().child("comment").child(commentId)
             commentRef.observeSingleEvent(of: .value, with: { (snapshot) in
                 let dictionary = snapshot.value as? [String: AnyObject]

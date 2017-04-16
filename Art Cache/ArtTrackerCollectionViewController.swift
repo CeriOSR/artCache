@@ -139,7 +139,7 @@ class ArtTrackerCollectionViewController: UICollectionViewController, UICollecti
         self.locations = []
         let panRef = FIRDatabase.database().reference().child("approved_art")
         panRef.observe(.childAdded, with: { (snapshot) in
-            guard let panId = snapshot.key as? String else {return}
+            let panId = snapshot.key
             let databaseRef = FIRDatabase.database().reference().child("art").child(panId)
             databaseRef.observeSingleEvent(of: .value, with: { (snapshot) in
                 
