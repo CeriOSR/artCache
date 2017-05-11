@@ -27,7 +27,7 @@ class BaseCell: UICollectionViewCell {
 }
 
 class ArtTrackerCollectionViewCell: BaseCell {
-    
+        
     let imageView: UIImageView = {
         let image = UIImageView()
         image.contentMode = .scaleAspectFit
@@ -56,6 +56,7 @@ class ArtTrackerCollectionViewCell: BaseCell {
     
     override func prepareForReuse() {
         imageView.image = nil
+        backgroundColor = .white
         titleLabel.text = nil
     }
 }
@@ -106,20 +107,30 @@ class CommentCell: BaseCell {
     
     let textView: UITextView = {
         let textView = UITextView()
-        textView.font = UIFont.systemFont(ofSize: 12)
+        textView.font = UIFont.systemFont(ofSize: 16)
         textView.isUserInteractionEnabled = false
         return textView
     }()
+    
+    let userLabel: UILabel = {
+        let label = UILabel()
+        label.font = UIFont.systemFont(ofSize: 12)
+        return label
+    }()
+    
     override func setupViews() {
         super.setupViews()
         addSubview(textView)
+        addSubview(userLabel)
         
         addConstraintsWithFormat(format: "H:|[v0]|", views: textView)
-        addConstraintsWithFormat(format: "V:|[v0]|", views: textView)
+        addConstraintsWithFormat(format: "H:|-6-[v0]|", views: userLabel)
+        addConstraintsWithFormat(format: "V:|[v0(35)][v1]", views: textView, userLabel)
     }
     
     override func prepareForReuse() {
         textView.text = nil
+        userLabel.text = nil
     }
 }
 

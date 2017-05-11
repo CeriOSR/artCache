@@ -44,6 +44,8 @@
 	<string>Images needed for the Art Cache.</string>
 	<key>NSLocationWhenInUseUsageDescription</key>
 	<string>Location needed for Art Cache App.</string>
+	<key>NSLocationAlwaysUsageDescription</key>
+	<string>Location needed for Art Cache App.</string>
 	<key>NSPhotoLibraryUsageDescription</key>
 	<string>Images needed for the Art Cache.</string>
 	<key>UILaunchStoryboardName</key>

@@ -14,11 +14,11 @@ class User: NSObject {
     var fbId: String?
 }
 
-class Location: NSObject {
-    var date: String?
-    var latitude: String?
-    var longitude: String?
-}
+//class Location: NSObject {
+//    var date: String?
+//    var latitude: String?
+//    var longitude: String?
+//}
 
 class Comments: NSObject {
     var comment: String?
@@ -34,4 +34,8 @@ class Art: NSObject {
     var hint: String?
     var imageUrl: String?
     var posterId: String?
+    var date: String?
+    var latitude: String?
+    var longitude: String?
+
 }

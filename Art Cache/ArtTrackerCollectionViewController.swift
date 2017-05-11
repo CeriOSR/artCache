@@ -18,9 +18,9 @@ class ArtTrackerCollectionViewController: UICollectionViewController, UICollecti
 
     let locationManager = CLLocationManager()
     var userCoordinates = CLLocationCoordinate2D()
-    var locations = [Location]()
+//    var locations = [Location]()
     var arts = [Art]()
-    
+    var timer = Timer()
     var artLocations = [CLLocationCoordinate2D]()  //append the various art coordinates to this by self.artLocation(CLLocationCoordinate2D(latitude: ,longitude: ) during the fetchArt()
     var userLocation = CLLocationCoordinate2D(latitude: 0, longitude: 0)
     
@@ -94,7 +94,7 @@ class ArtTrackerCollectionViewController: UICollectionViewController, UICollecti
     override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let artDetailController = ArtDetailController()
         artDetailController.art = arts[indexPath.item]
-        artDetailController.artLocation = locations[indexPath.item]
+//        artDetailController.artLocation = locations[indexPath.item]
         let artDetailNavController = UINavigationController(rootViewController: artDetailController)
         self.present(artDetailNavController, animated: true, completion: nil)
     }
@@ -131,12 +131,11 @@ class ArtTrackerCollectionViewController: UICollectionViewController, UICollecti
         annotationUser.title = "Your Location"
         self.mapView.addAnnotation(annotationUser)
         
-        addArtAnnotation()
+        //addArtAnnotation()
     }
     
     func fetchApprovedArt() {
         self.arts = []
-        self.locations = []
         let panRef = FIRDatabase.database().reference().child("approved_art")
         panRef.observe(.childAdded, with: { (snapshot) in
             let panId = snapshot.key
@@ -145,11 +144,11 @@ class ArtTrackerCollectionViewController: UICollectionViewController, UICollecti
                 
                 let dictionary = snapshot.value as? [String: AnyObject]
                 let art = Art()
-                let location = Location()
-                location.date = dictionary?["date"] as? String
-                location.latitude = dictionary?["latitude"] as? String
-                location.longitude = dictionary?["longitude"] as? String
-                self.locations.append(location)
+//                let location = Location()
+                art.date = dictionary?["date"] as? String
+                art.latitude = dictionary?["latitude"] as? String
+                art.longitude = dictionary?["longitude"] as? String
+//                self.locations.append(location)
                 
                 art.artist = dictionary?["artist"] as? String
                 art.desc = dictionary?["desc"] as? String
@@ -159,28 +158,36 @@ class ArtTrackerCollectionViewController: UICollectionViewController, UICollecti
                 art.imageUrl = dictionary?["imageUrl"] as? String
                 art.artId = snapshot.key
                 
-                self.locations.append(location)
+//                self.locations.append(location)
                 self.arts.append(art)
                 
-                DispatchQueue.main.async(execute: { 
-                    self.collectionView?.reloadData()
-                })
+//                DispatchQueue.main.async(execute: { 
+//                    self.collectionView?.reloadData()
+//                })
+                self.timer.invalidate()
+                self.timer = Timer.scheduledTimer(timeInterval: 0.3, target: self, selector: #selector(self.reloadDataWithTimer), userInfo: nil, repeats: false)
             }, withCancel: nil)
         }, withCancel: nil)
     }
     
-    func addArtAnnotation() {
-        for location in locations {
-            for art in arts {
-                let annotation = MKPointAnnotation()
-                guard let latitude = location.latitude, let longitude = location.longitude else {return}
-                annotation.coordinate = CLLocationCoordinate2D(latitude: CLLocationDegrees(latitude)!, longitude: CLLocationDegrees(longitude)!)
-                annotation.title = art.title
-                annotation.subtitle = art.hint
-                self.mapView.addAnnotation(annotation)
-            }
+    func reloadDataWithTimer() {
+        DispatchQueue.main.async { 
+            self.collectionView?.reloadData()
         }
     }
+    
+//    func addArtAnnotation() {
+//        for location in locations {
+//            for art in arts {
+//                let annotation = MKPointAnnotation()
+//                guard let latitude = location.latitude, let longitude = location.longitude else {return}
+//                annotation.coordinate = CLLocationCoordinate2D(latitude: CLLocationDegrees(latitude)!, longitude: CLLocationDegrees(longitude)!)
+//                annotation.title = art.title
+//                annotation.subtitle = art.hint
+//                self.mapView.addAnnotation(annotation)
+//            }
+//        }
+//    }
     
     func reloadData() {
         fetchApprovedArt()
@@ -192,7 +199,7 @@ class ArtTrackerCollectionViewController: UICollectionViewController, UICollecti
     }
     
     func distanceBetweenUserAndArt(cell: BaseCell, indexPath: IndexPath) {
-        if let latitude = Double(locations[indexPath.item].latitude!), let longitude = Double(locations[indexPath.item].longitude!) {
+        if let latitude = Double(arts[indexPath.item].latitude!), let longitude = Double(arts[indexPath.item].longitude!) {
             
             let artLocation = CLLocationCoordinate2DMake(latitude, longitude)
             let artCoordinates = MKMapPointForCoordinate(artLocation)

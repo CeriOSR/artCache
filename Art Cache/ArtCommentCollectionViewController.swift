@@ -35,7 +35,13 @@ class ArtCommetCollectionViewController: UICollectionViewController, UICollectio
     sendButton.addTarget(self, action: #selector(handleSend), for: .touchUpInside)
     return sendButton
     }()
-
+    
+    let separatorLineView: UIView = {
+        let view = UIView()
+        view.backgroundColor = .lightGray
+        view.translatesAutoresizingMaskIntoConstraints = false
+        return view
+    }()
     
 //    let containerView: UIView = {
 //        let view = UIView()
@@ -64,18 +70,17 @@ class ArtCommetCollectionViewController: UICollectionViewController, UICollectio
     }
     
     lazy var inputContainerView: UIView = {
-        
-        
-        
         let containerView = UIView()
         containerView.frame = CGRect(x: 0, y: 0, width: self.view.frame.width, height: 50)
         containerView.backgroundColor = .white
         
         containerView.addSubview(self.textField)
         containerView.addSubview(self.sendButton)
+        containerView.addSubview(self.separatorLineView)
         containerView.addConstraintsWithFormat(format: "H:|-2-[v0]-2-[v1(65)]|", views: self.textField, self.sendButton)
-        containerView.addConstraintsWithFormat(format: "V:|[v0]|", views: self.textField)
-        containerView.addConstraintsWithFormat(format: "V:|[v0]|", views: self.sendButton)
+        containerView.addConstraintsWithFormat(format: "H:|[v0]|", views: self.separatorLineView)
+        containerView.addConstraintsWithFormat(format: "V:|[v0(2)][v1]|", views: self.separatorLineView, self.textField)
+        containerView.addConstraintsWithFormat(format: "V:|[v0(2)][v1]|", views: self.separatorLineView, self.sendButton)
         
         return containerView
 
@@ -102,18 +107,20 @@ class ArtCommetCollectionViewController: UICollectionViewController, UICollectio
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellId, for: indexPath) as! CommentCell
         let comment = comments[indexPath.item]
-        cell.textView.text = comment.comment
-        
+        if let cellComment = comment.comment, let cellUser = comment.posterName {
+            cell.textView.text = cellComment
+            cell.userLabel.text = cellUser
+        }
         return cell
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: view.frame.width, height: 80)
+        return CGSize(width: view.frame.width, height: 50)
     }
     
     func setupCollectionView() {
         collectionView?.alwaysBounceVertical = true
-        collectionView?.backgroundColor = .blue
+        collectionView?.backgroundColor = .white
         collectionView?.register(CommentCell.self, forCellWithReuseIdentifier: cellId)
         collectionView?.keyboardDismissMode = .interactive
     }

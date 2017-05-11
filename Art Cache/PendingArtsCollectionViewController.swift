@@ -15,7 +15,7 @@ class PendingArtsCollectionViewController: UICollectionViewController, UICollect
     
     var art: Art?
     var arts = [Art]()
-    var locations = [Location]()
+//    var locations = [Location]()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -66,7 +66,7 @@ class PendingArtsCollectionViewController: UICollectionViewController, UICollect
     
     func fetchPendingArts() {
         self.arts = []
-        self.locations = []
+//        self.locations = []
         let panRef = FIRDatabase.database().reference().child("pending_art")
         panRef.observe(.childAdded, with: { (snapshot) in
             let panId = snapshot.key
@@ -75,11 +75,11 @@ class PendingArtsCollectionViewController: UICollectionViewController, UICollect
                 
                 let dictionary = snapshot.value as? [String: AnyObject]
                 let art = Art()
-                let location = Location()
-                location.date = dictionary?["date"] as? String
-                location.latitude = dictionary?["latitude"] as? String
-                location.longitude = dictionary?["longitude"] as? String
-                self.locations.append(location)
+//                let location = Location()
+                art.date = dictionary?["date"] as? String
+                art.latitude = dictionary?["latitude"] as? String
+                art.longitude = dictionary?["longitude"] as? String
+//                self.locations.append(location)
                 
                 art.artId = snapshot.key as String
                 art.artist = dictionary?["artist"] as? String
