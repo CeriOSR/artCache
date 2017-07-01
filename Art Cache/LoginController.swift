@@ -66,6 +66,7 @@ class LoginController: UIViewController, FBSDKLoginButtonDelegate {
     func loginButton(_ loginButton: FBSDKLoginButton!, didCompleteWith result: FBSDKLoginManagerLoginResult!, error: Error!) {
         if error != nil {
             print(error)
+            loginButton.shake()
             return
         }
         print("successfully logged in with facebook!")
@@ -85,6 +86,7 @@ class LoginController: UIViewController, FBSDKLoginButtonDelegate {
         FIRAuth.auth()?.signIn(with: credentials, completion: { (user, error) in
             if error != nil {
                 print(error ?? "Something went wrong")
+                
                 return
             }
             print("current", self.values)
