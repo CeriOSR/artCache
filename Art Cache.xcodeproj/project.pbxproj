@@ -54,6 +54,18 @@
 		E08CCBF61EA1B41F0064FC29 /* ArtCommentCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E08CCBF51EA1B41F0064FC29 /* ArtCommentCollectionViewController.swift */; };
 		E08CCBF71EA1B41F0064FC29 /* ArtCommentCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E08CCBF51EA1B41F0064FC29 /* ArtCommentCollectionViewController.swift */; };
 		E08CCBF81EA1B41F0064FC29 /* ArtCommentCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E08CCBF51EA1B41F0064FC29 /* ArtCommentCollectionViewController.swift */; };
+		E0EFAE961F0986B800DE9C4E /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0EFAE951F0986B800DE9C4E /* LoginViewModel.swift */; };
+		E0EFAE971F09973000DE9C4E /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0EFAE951F0986B800DE9C4E /* LoginViewModel.swift */; };
+		E0EFAE981F09973100DE9C4E /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0EFAE951F0986B800DE9C4E /* LoginViewModel.swift */; };
+		E0EFEB081F07487600C21593 /* ViewModelProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0EFEB071F07487600C21593 /* ViewModelProtocol.swift */; };
+		E0EFEB091F07487600C21593 /* ViewModelProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0EFEB071F07487600C21593 /* ViewModelProtocol.swift */; };
+		E0EFEB0A1F07487600C21593 /* ViewModelProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0EFEB071F07487600C21593 /* ViewModelProtocol.swift */; };
+		E0EFEB0C1F07E1D900C21593 /* RootViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0EFEB0B1F07E1D900C21593 /* RootViewModel.swift */; };
+		E0EFEB0D1F07E1D900C21593 /* RootViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0EFEB0B1F07E1D900C21593 /* RootViewModel.swift */; };
+		E0EFEB0E1F07E1D900C21593 /* RootViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0EFEB0B1F07E1D900C21593 /* RootViewModel.swift */; };
+		E0F5907A1F0C8D0B00604124 /* TabBarViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0F590791F0C8D0B00604124 /* TabBarViewModel.swift */; };
+		E0F5907B1F0C8D0B00604124 /* TabBarViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0F590791F0C8D0B00604124 /* TabBarViewModel.swift */; };
+		E0F5907C1F0C8D0B00604124 /* TabBarViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0F590791F0C8D0B00604124 /* TabBarViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -109,6 +121,10 @@
 		E06B5B4E1E95F60600A5DAC3 /* TabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
 		E06B5B521E95FD3E00A5DAC3 /* ArtDetailController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArtDetailController.swift; sourceTree = "<group>"; };
 		E08CCBF51EA1B41F0064FC29 /* ArtCommentCollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArtCommentCollectionViewController.swift; sourceTree = "<group>"; };
+		E0EFAE951F0986B800DE9C4E /* LoginViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
+		E0EFEB071F07487600C21593 /* ViewModelProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewModelProtocol.swift; sourceTree = "<group>"; };
+		E0EFEB0B1F07E1D900C21593 /* RootViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RootViewModel.swift; sourceTree = "<group>"; };
+		E0F590791F0C8D0B00604124 /* TabBarViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabBarViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -174,9 +190,11 @@
 		E00016E91E900C9A004A0ABC /* Art Cache */ = {
 			isa = PBXGroup;
 			children = (
+				E0EFAE941F09869D00DE9C4E /* ViewModels */,
+				E0EFEB061F07479800C21593 /* Protocols */,
 				E06B5B491E95EE0800A5DAC3 /* Cells */,
 				E06B5B481E95EDFD00A5DAC3 /* Extensions and Models */,
-				E06B5B471E95EDF100A5DAC3 /* Controllers */,
+				E06B5B471E95EDF100A5DAC3 /* ViewControllers */,
 				E00016EA1E900C9A004A0ABC /* AppDelegate.swift */,
 				E00016EE1E900C9A004A0ABC /* Main.storyboard */,
 				E00016F41E900C9A004A0ABC /* Assets.xcassets */,
@@ -206,7 +224,7 @@
 			path = "Art CacheUITests";
 			sourceTree = "<group>";
 		};
-		E06B5B471E95EDF100A5DAC3 /* Controllers */ = {
+		E06B5B471E95EDF100A5DAC3 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
 				E00016EC1E900C9A004A0ABC /* ViewController.swift */,
@@ -219,7 +237,7 @@
 				E03E3F2A1E986BEB00616729 /* PendingArtsCollectionViewController.swift */,
 				E08CCBF51EA1B41F0064FC29 /* ArtCommentCollectionViewController.swift */,
 			);
-			name = Controllers;
+			name = ViewControllers;
 			sourceTree = "<group>";
 		};
 		E06B5B481E95EDFD00A5DAC3 /* Extensions and Models */ = {
@@ -237,6 +255,24 @@
 				E051F9CD1E96CCA4001CF061 /* Cells.swift */,
 			);
 			name = Cells;
+			sourceTree = "<group>";
+		};
+		E0EFAE941F09869D00DE9C4E /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				E0EFEB0B1F07E1D900C21593 /* RootViewModel.swift */,
+				E0EFAE951F0986B800DE9C4E /* LoginViewModel.swift */,
+				E0F590791F0C8D0B00604124 /* TabBarViewModel.swift */,
+			);
+			name = ViewModels;
+			sourceTree = "<group>";
+		};
+		E0EFEB061F07479800C21593 /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				E0EFEB071F07487600C21593 /* ViewModelProtocol.swift */,
+			);
+			name = Protocols;
 			sourceTree = "<group>";
 		};
 		FCB6EBF7124F99F9931A2C68 /* Pods */ = {
@@ -539,6 +575,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E0EFEB081F07487600C21593 /* ViewModelProtocol.swift in Sources */,
 				E06B5B441E95DEC000A5DAC3 /* Extensions.swift in Sources */,
 				E051F9CE1E96CCA4001CF061 /* Cells.swift in Sources */,
 				E00016ED1E900C9A004A0ABC /* ViewController.swift in Sources */,
@@ -548,10 +585,13 @@
 				E06B5B401E95DA4700A5DAC3 /* ArtTrackerCollectionViewController.swift in Sources */,
 				E051F9C21E968B77001CF061 /* LoginController.swift in Sources */,
 				E00016EB1E900C9A004A0ABC /* AppDelegate.swift in Sources */,
+				E0F5907A1F0C8D0B00604124 /* TabBarViewModel.swift in Sources */,
+				E0EFAE961F0986B800DE9C4E /* LoginViewModel.swift in Sources */,
 				E06B5B4F1E95F60600A5DAC3 /* TabBarController.swift in Sources */,
 				E03E3F2B1E986BEB00616729 /* PendingArtsCollectionViewController.swift in Sources */,
 				E00016F31E900C9A004A0ABC /* Art_Cache.xcdatamodeld in Sources */,
 				E06B5B4B1E95EE5D00A5DAC3 /* AddArtController.swift in Sources */,
+				E0EFEB0C1F07E1D900C21593 /* RootViewModel.swift in Sources */,
 				E051F9C61E969436001CF061 /* Models.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -568,7 +608,11 @@
 				E06B5B541E95FD3E00A5DAC3 /* ArtDetailController.swift in Sources */,
 				E051F9C71E969436001CF061 /* Models.swift in Sources */,
 				E06B5B451E95DEC000A5DAC3 /* Extensions.swift in Sources */,
+				E0F5907B1F0C8D0B00604124 /* TabBarViewModel.swift in Sources */,
+				E0EFAE971F09973000DE9C4E /* LoginViewModel.swift in Sources */,
+				E0EFEB0D1F07E1D900C21593 /* RootViewModel.swift in Sources */,
 				E06B5B501E95F60600A5DAC3 /* TabBarController.swift in Sources */,
+				E0EFEB091F07487600C21593 /* ViewModelProtocol.swift in Sources */,
 				E06B5B411E95DA4700A5DAC3 /* ArtTrackerCollectionViewController.swift in Sources */,
 				E051F9C31E968B77001CF061 /* LoginController.swift in Sources */,
 				E051F9CF1E96CCA4001CF061 /* Cells.swift in Sources */,
@@ -587,7 +631,11 @@
 				E06B5B551E95FD3E00A5DAC3 /* ArtDetailController.swift in Sources */,
 				E051F9C81E969436001CF061 /* Models.swift in Sources */,
 				E06B5B461E95DEC000A5DAC3 /* Extensions.swift in Sources */,
+				E0F5907C1F0C8D0B00604124 /* TabBarViewModel.swift in Sources */,
+				E0EFAE981F09973100DE9C4E /* LoginViewModel.swift in Sources */,
+				E0EFEB0E1F07E1D900C21593 /* RootViewModel.swift in Sources */,
 				E06B5B511E95F60600A5DAC3 /* TabBarController.swift in Sources */,
+				E0EFEB0A1F07487600C21593 /* ViewModelProtocol.swift in Sources */,
 				E06B5B421E95DA4700A5DAC3 /* ArtTrackerCollectionViewController.swift in Sources */,
 				E051F9C41E968B77001CF061 /* LoginController.swift in Sources */,
 				E051F9D01E96CCA4001CF061 /* Cells.swift in Sources */,
