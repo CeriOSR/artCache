@@ -26,7 +26,7 @@ protocol LoginViewModelProtocol {
     func fbGraphRequest()
 }
 
-protocol TabControllerProtocol {
-    func checkUserCredentials()
+protocol RoutesAndDecisionsProtocol {
+    func checkIfUserExistAndWhoIsUser()  -> [UINavigationController]
 }
 

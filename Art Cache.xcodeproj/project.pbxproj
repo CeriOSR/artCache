@@ -63,9 +63,9 @@
 		E0EFEB0C1F07E1D900C21593 /* RootViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0EFEB0B1F07E1D900C21593 /* RootViewModel.swift */; };
 		E0EFEB0D1F07E1D900C21593 /* RootViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0EFEB0B1F07E1D900C21593 /* RootViewModel.swift */; };
 		E0EFEB0E1F07E1D900C21593 /* RootViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0EFEB0B1F07E1D900C21593 /* RootViewModel.swift */; };
-		E0F5907A1F0C8D0B00604124 /* TabBarViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0F590791F0C8D0B00604124 /* TabBarViewModel.swift */; };
-		E0F5907B1F0C8D0B00604124 /* TabBarViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0F590791F0C8D0B00604124 /* TabBarViewModel.swift */; };
-		E0F5907C1F0C8D0B00604124 /* TabBarViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0F590791F0C8D0B00604124 /* TabBarViewModel.swift */; };
+		E0F5907A1F0C8D0B00604124 /* RoutesAndDecisions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0F590791F0C8D0B00604124 /* RoutesAndDecisions.swift */; };
+		E0F5907B1F0C8D0B00604124 /* RoutesAndDecisions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0F590791F0C8D0B00604124 /* RoutesAndDecisions.swift */; };
+		E0F5907C1F0C8D0B00604124 /* RoutesAndDecisions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0F590791F0C8D0B00604124 /* RoutesAndDecisions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -124,7 +124,7 @@
 		E0EFAE951F0986B800DE9C4E /* LoginViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
 		E0EFEB071F07487600C21593 /* ViewModelProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewModelProtocol.swift; sourceTree = "<group>"; };
 		E0EFEB0B1F07E1D900C21593 /* RootViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RootViewModel.swift; sourceTree = "<group>"; };
-		E0F590791F0C8D0B00604124 /* TabBarViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabBarViewModel.swift; sourceTree = "<group>"; };
+		E0F590791F0C8D0B00604124 /* RoutesAndDecisions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoutesAndDecisions.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -262,7 +262,7 @@
 			children = (
 				E0EFEB0B1F07E1D900C21593 /* RootViewModel.swift */,
 				E0EFAE951F0986B800DE9C4E /* LoginViewModel.swift */,
-				E0F590791F0C8D0B00604124 /* TabBarViewModel.swift */,
+				E0F590791F0C8D0B00604124 /* RoutesAndDecisions.swift */,
 			);
 			name = ViewModels;
 			sourceTree = "<group>";
@@ -585,7 +585,7 @@
 				E06B5B401E95DA4700A5DAC3 /* ArtTrackerCollectionViewController.swift in Sources */,
 				E051F9C21E968B77001CF061 /* LoginController.swift in Sources */,
 				E00016EB1E900C9A004A0ABC /* AppDelegate.swift in Sources */,
-				E0F5907A1F0C8D0B00604124 /* TabBarViewModel.swift in Sources */,
+				E0F5907A1F0C8D0B00604124 /* RoutesAndDecisions.swift in Sources */,
 				E0EFAE961F0986B800DE9C4E /* LoginViewModel.swift in Sources */,
 				E06B5B4F1E95F60600A5DAC3 /* TabBarController.swift in Sources */,
 				E03E3F2B1E986BEB00616729 /* PendingArtsCollectionViewController.swift in Sources */,
@@ -608,7 +608,7 @@
 				E06B5B541E95FD3E00A5DAC3 /* ArtDetailController.swift in Sources */,
 				E051F9C71E969436001CF061 /* Models.swift in Sources */,
 				E06B5B451E95DEC000A5DAC3 /* Extensions.swift in Sources */,
-				E0F5907B1F0C8D0B00604124 /* TabBarViewModel.swift in Sources */,
+				E0F5907B1F0C8D0B00604124 /* RoutesAndDecisions.swift in Sources */,
 				E0EFAE971F09973000DE9C4E /* LoginViewModel.swift in Sources */,
 				E0EFEB0D1F07E1D900C21593 /* RootViewModel.swift in Sources */,
 				E06B5B501E95F60600A5DAC3 /* TabBarController.swift in Sources */,
@@ -631,7 +631,7 @@
 				E06B5B551E95FD3E00A5DAC3 /* ArtDetailController.swift in Sources */,
 				E051F9C81E969436001CF061 /* Models.swift in Sources */,
 				E06B5B461E95DEC000A5DAC3 /* Extensions.swift in Sources */,
-				E0F5907C1F0C8D0B00604124 /* TabBarViewModel.swift in Sources */,
+				E0F5907C1F0C8D0B00604124 /* RoutesAndDecisions.swift in Sources */,
 				E0EFAE981F09973100DE9C4E /* LoginViewModel.swift in Sources */,
 				E0EFEB0E1F07E1D900C21593 /* RootViewModel.swift in Sources */,
 				E06B5B511E95F60600A5DAC3 /* TabBarController.swift in Sources */,
