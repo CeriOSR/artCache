@@ -39,7 +39,7 @@ class ArtTrackerCollectionViewController: UICollectionViewController, UICollecti
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        checkIfUserLoggedIn()
+        //checkIfUserLoggedIn()
         view.backgroundColor = .white
         navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Logout", style: .plain, target: self, action: #selector(handleLogout))
         collectionView?.backgroundColor = .white
@@ -47,7 +47,7 @@ class ArtTrackerCollectionViewController: UICollectionViewController, UICollecti
         collectionView?.alwaysBounceVertical = true
         self.collectionView!.register(ArtTrackerCollectionViewCell.self, forCellWithReuseIdentifier: reuseIdentifier)
         //setupViews()
-        scrollToBottom()
+        //scrollToBottom()
     }
     
     override func viewDidAppear(_ animated: Bool) {
